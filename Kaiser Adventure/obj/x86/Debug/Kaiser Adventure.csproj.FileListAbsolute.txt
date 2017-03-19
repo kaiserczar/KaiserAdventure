@@ -1,0 +1,24 @@
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\Content\Score.xnb
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\Kaiser Adventure.exe
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\Kaiser Adventure.pdb
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\MonoGame.Framework.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.XInput.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\MonoGame.Framework.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.XInput.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\obj\x86\Debug\Kaiser Adventure.csprojResolveAssemblyReference.cache
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\obj\x86\Debug\Kaiser Adventure.exe
+E:\Code\Visual Studio\Projects\Kaiser Adventure\Kaiser Adventure\obj\x86\Debug\Kaiser Adventure.pdb
