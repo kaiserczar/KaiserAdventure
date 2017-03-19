@@ -48,7 +48,7 @@ namespace Kaiser_Adventure {
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkGreen);
             
             GameState.ManagerDraw(this, gameTime);
 

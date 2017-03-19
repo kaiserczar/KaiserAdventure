@@ -45,7 +45,9 @@
     <Compile Include="Main.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Camera2D.cs" />
     <Compile Include="Utilities\GameState.cs" />
+    <Compile Include="Utilities\RainbowColorCycler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
