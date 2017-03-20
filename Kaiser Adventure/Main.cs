@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Kaiser_Adventure.Utilities;
+using Kaiser_Adventure.Entities;
 
 namespace Kaiser_Adventure {
     

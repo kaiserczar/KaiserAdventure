@@ -36,28 +36,7 @@ namespace Kaiser_Adventure.Utilities {
         }
 
         public void Update(GameTime gameTime) {
-            var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            var keyboardState = Keyboard.GetState();
-
-            // rotation
-            if (keyboardState.IsKeyDown(Keys.Q))
-                Rotation -= deltaTime;
-
-            if (keyboardState.IsKeyDown(Keys.W))
-                Rotation += deltaTime;
-
-            // movement
-            if (keyboardState.IsKeyDown(Keys.Up))
-                Position -= new Vector2(0, 250) * deltaTime;
-
-            if (keyboardState.IsKeyDown(Keys.Down))
-                Position += new Vector2(0, 250) * deltaTime;
-
-            if (keyboardState.IsKeyDown(Keys.Left))
-                Position -= new Vector2(250, 0) * deltaTime;
-
-            if (keyboardState.IsKeyDown(Keys.Right))
-                Position += new Vector2(250, 0) * deltaTime;
+            
         }
 
     }

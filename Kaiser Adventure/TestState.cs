@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Kaiser_Adventure.Utilities;
+using Kaiser_Adventure.Entities;
 
 namespace Kaiser_Adventure {
 
@@ -18,7 +19,8 @@ namespace Kaiser_Adventure {
         private RainbowColorCycler colorCycle;
         private Camera2D camera;
 
-        private Texture2D character;
+        private Character player;
+        private List<Character> npcs = new List<Character>();
 
         public TestState(Main main, int stateNum) : base(main) {
             this.stateNum = stateNum;
@@ -26,7 +28,15 @@ namespace Kaiser_Adventure {
             this.colorCycle = new RainbowColorCycler(4.0);
             camera = new Camera2D(main.GraphicsDevice.Viewport);
 
-            this.character = main.Content.Load<Texture2D>("character");
+            this.player = new Character();
+
+            Random rand = new Random();
+
+            for (int i=0; i<5; i++) {
+                Character npc = new Character();
+                npc.Position = new Vector2(rand.Next(main.GraphicsDevice.Viewport.Width), rand.Next(main.GraphicsDevice.Viewport.Height));
+                npcs.Add(npc);
+            }
         }
 
         public override void Update(GameTime gameTime) {
@@ -40,6 +50,45 @@ namespace Kaiser_Adventure {
                     GameState.Pop();
                 }
             }*/
+
+
+
+
+
+            var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            var keyboardState = Keyboard.GetState();
+
+            // rotation
+            if (keyboardState.IsKeyDown(Keys.Q)) {
+                player.Rotation -= deltaTime;
+                camera.Rotation -= deltaTime;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.W)) {
+                player.Rotation += deltaTime;
+                camera.Rotation += deltaTime;
+            }
+
+            // movement
+            if (keyboardState.IsKeyDown(Keys.Up)) {
+                player.Position -= new Vector2(0, 250) * deltaTime;
+                camera.Position -= new Vector2(0, 250) * deltaTime;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Down)) {
+                player.Position += new Vector2(0, 250) * deltaTime;
+                camera.Position += new Vector2(0, 250) * deltaTime;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Left)) {
+                player.Position -= new Vector2(250, 0) * deltaTime;
+                camera.Position -= new Vector2(250, 0) * deltaTime;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Right)) {
+                player.Position += new Vector2(250, 0) * deltaTime;
+                camera.Position += new Vector2(250, 0) * deltaTime;
+            }
         }
 
         public override void Draw(GameTime gameTime) {
@@ -49,6 +98,12 @@ namespace Kaiser_Adventure {
             this.spriteBatch.Begin(transformMatrix: camera.GetViewMatrix());
 
             this.spriteBatch.DrawString(main.font, "State "+stateNum.ToString()+": "+ counter.ToString(), new Vector2(midX, midY), colorCycle.color);
+
+            foreach (Character c in npcs) {
+                c.Draw(gameTime, spriteBatch);
+            }
+
+            player.Draw(gameTime, spriteBatch);
 
             this.spriteBatch.End();
         }
