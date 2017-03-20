@@ -25,15 +25,19 @@ namespace Kaiser_Adventure.Utilities {
 
         public void Update(GameTime gameTime) {
             double delta = gameTime.ElapsedGameTime.TotalSeconds;
-            double radianAngle = (((delta+currentTime) % period) / period) * 2 * Math.PI;
+            double radianAngle = Math.PI * 2 - (((delta+currentTime) % period) / period) * 2 * Math.PI;
 
-            float R = (float) Math.Sin(radianAngle);
-            float G = (float) Math.Sin(radianAngle + 2 * Math.PI / 3);
-            float B = (float) Math.Sin(radianAngle + 4 * Math.PI / 3);
+            float R = (float) Math.Sin(radianAngle)*0.5f + 0.5f;
+            float G = (float) Math.Sin(radianAngle + 2 * Math.PI / 3) * 0.5f + 0.5f;
+            float B = (float) Math.Sin(radianAngle + 4 * Math.PI / 3) * 0.5f + 0.5f;
+            //float G = (float)Math.Sin(radianAngle + Math.PI / 2) * 0.5f + 0.5f;
+            //float B = (float)Math.Sin(radianAngle + Math.PI) * 0.5f + 0.5f;
 
+            /*
             if (R < 0) R = 0;
             if (G < 0) G = 0;
             if (B < 0) B = 0;
+            */
 
             color = new Color(R, G, B);
             currentTime = (delta + currentTime) % period;
