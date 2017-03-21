@@ -16,8 +16,8 @@ namespace Kaiser_Adventure.Entities.Controllers {
 
         public AIZombieController(Character parent, Character target) : base(parent){
             this.target = target;
-            this.parent.moveSpeed = this.parent.moveSpeed * 0.5f;
-            this.parent.turningSpeed = this.parent.turningSpeed * 0.5f;
+            this.parent.moveSpeed = this.target.moveSpeed * 0.5f;
+            this.parent.turningSpeed = this.target.turningSpeed * 0.5f;
         }
 
         public override void DoControlUpdate(GameTime gameTime) {
@@ -27,7 +27,9 @@ namespace Kaiser_Adventure.Entities.Controllers {
             Vector2 targetLoc = target.Position;
             Vector2 currentLoc = parent.Position;
             float angle = (float) Math.Atan2(targetLoc.Y - currentLoc.Y, targetLoc.X - currentLoc.X);
-            this.parent.Rotation = angle;
+            this.parent.Rotation = angle + (float)Math.PI / 2;
+
+            parent.Position -= new Vector2(-250 * (float)Math.Sin(parent.Rotation), 250 * (float)Math.Cos(parent.Rotation)) * deltaTime * parent.moveSpeed;
 
         }
     }

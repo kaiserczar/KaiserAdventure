@@ -27,7 +27,7 @@ namespace Kaiser_Adventure {
             graphics.IsFullScreen = true;
             graphics.ApplyChanges();
 
-            GameState baseState = new TestState(this, 1);
+            GameState baseState = new TestState(this);
             GameState.Push(baseState);
 
             base.Initialize();

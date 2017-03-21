@@ -13,9 +13,7 @@ using Kaiser_Adventure.Entities.Controllers;
 namespace Kaiser_Adventure {
 
     class TestState : GameState {
-
-        private int stateNum;
-        private int counter;
+        
         private SpriteBatch spriteBatch;
         private RainbowColorCycler colorCycle;
         private Camera2D camera;
@@ -25,9 +23,7 @@ namespace Kaiser_Adventure {
 
         private PositionMatcher cameraLock;
 
-        public TestState(Main main, int stateNum) : base(main) {
-            this.stateNum = stateNum;
-            this.counter = 0;
+        public TestState(Main main) : base(main) {
             this.colorCycle = new RainbowColorCycler(4.0);
             camera = new Camera2D(main.GraphicsDevice.Viewport);
 
@@ -47,15 +43,10 @@ namespace Kaiser_Adventure {
         public override void Update(GameTime gameTime) {
             colorCycle.Update(gameTime);
             camera.Update(gameTime);
-            counter++;
-            /*if (counter>=300) {
-                if (stateNum < 3) {
-                    GameState.Push(new TestState(main, stateNum + 1));
-                } else {
-                    GameState.Pop();
-                }
-            }*/
             player.Update(gameTime);
+            foreach(Character npc in npcs) {
+                npc.Update(gameTime);
+            }
             cameraLock.Syncronize();
         }
 
@@ -66,7 +57,7 @@ namespace Kaiser_Adventure {
             this.spriteBatch.Begin(transformMatrix: camera.GetViewMatrix());
 
             //this.spriteBatch.DrawString(main.font, "State "+stateNum.ToString()+": "+ counter.ToString(), new Vector2(midX, midY), colorCycle.color);
-            this.spriteBatch.DrawString(main.font, "Angle: " + player.Rotation.ToString(), new Vector2(10, 10), Color.Red);
+            this.spriteBatch.DrawString(main.font, "Angle: " + npcs[0].Rotation.ToString(), new Vector2(10, 10), Color.Red);
 
             foreach (Character c in npcs) {
                 c.Draw(gameTime, spriteBatch);
@@ -78,7 +69,6 @@ namespace Kaiser_Adventure {
         }
 
         protected override void OnEnter() {
-            this.counter = 0;
             this.spriteBatch = new SpriteBatch(main.GraphicsDevice);
         }
 
