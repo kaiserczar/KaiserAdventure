@@ -42,9 +42,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\Controllers\AIZombieController.cs" />
     <Compile Include="Entities\Controllers\Controller.cs" />
-    <Compile Include="Entities\Controllers\PlayerArcadeInputController.cs" />
-    <Compile Include="Entities\Controllers\PlayerInputController.cs" />
+    <Compile Include="Entities\Controllers\PlayerArcadeKeyboardInputController.cs" />
+    <Compile Include="Entities\Controllers\PlayerKeyboardInputController.cs" />
+    <Compile Include="Entities\Controllers\PlayerMouseKeyboardInputController.cs" />
     <Compile Include="Entities\Controllers\PositionMatcher.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\PlayerCharacter.cs" />

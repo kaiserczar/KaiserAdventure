@@ -39,6 +39,7 @@ namespace Kaiser_Adventure {
             for (int i=0; i<5; i++) {
                 Character npc = new Character();
                 npc.Position = new Vector2(rand.Next(main.GraphicsDevice.Viewport.Width), rand.Next(main.GraphicsDevice.Viewport.Height));
+                npc.controller = new AIZombieController(npc, player);
                 npcs.Add(npc);
             }
         }

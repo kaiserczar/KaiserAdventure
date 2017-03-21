@@ -7,12 +7,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace Kaiser_Adventure.Entities.Controllers {
-    class PlayerArcadeInputController : Controller{
+    class PlayerArcadeKeyboardInputController : Controller{
 
         public float turningSpeed;
         public float moveSpeed;
 
-        public PlayerArcadeInputController(Character parent) : base(parent) {
+        public PlayerArcadeKeyboardInputController(Character parent) : base(parent) {
             turningSpeed = 2 * (float)Math.PI;
             moveSpeed = 1.5f;
         }

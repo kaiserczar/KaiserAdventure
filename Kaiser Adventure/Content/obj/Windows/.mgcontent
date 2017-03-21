@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/Code/Visual Studio/Projects/KaiserAdventure/Kaiser Adventure/Content/Score.spritefont</File>
-    <File>E:/Code/Visual Studio/Projects/KaiserAdventure/Kaiser Adventure/Content/character.png</File>
+    <File>D:/Code/VS Projects/KaiserAdventure/Kaiser Adventure/Content/Score.spritefont</File>
+    <File>D:/Code/VS Projects/KaiserAdventure/Kaiser Adventure/Content/character.png</File>
   </SourceFiles>
 </SourceFileCollection>

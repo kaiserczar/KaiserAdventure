@@ -15,10 +15,13 @@ namespace Kaiser_Adventure.Entities {
 
         protected readonly Main main;
 
-        protected Texture2D staticImage;
+        public Texture2D staticImage;
         public Vector2 Position { get; set; }
         public float Rotation { get; set; }
-        protected Controller controller;
+        public Controller controller;
+
+        public float turningSpeed;
+        public float moveSpeed;
 
         public Character() {
             main = Main._;
@@ -48,18 +51,6 @@ namespace Kaiser_Adventure.Entities {
                     1.0f,
                     SpriteEffects.None,
                     1);
-
-            /*
-            spriteBatch.Draw(arrow,
-                             new Vector2(400, 240), // Location
-                             new Rectangle(0, 0, arrow.Width, arrow.Height), // Source Rectangle
-                             Color.White,
-                             angle,
-                             new Vector2(arrow.Width / 2, arrow.Height), // Origin point
-                             1.0f,
-                             SpriteEffects.None,
-                             1);
-            */
         }
     }
 
