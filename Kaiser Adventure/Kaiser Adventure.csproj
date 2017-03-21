@@ -42,7 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\Controllers\Controller.cs" />
+    <Compile Include="Entities\Controllers\PlayerArcadeInputController.cs" />
+    <Compile Include="Entities\Controllers\PlayerInputController.cs" />
+    <Compile Include="Entities\Controllers\PositionMatcher.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\PlayerCharacter.cs" />
     <Compile Include="TestState.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Program.cs" />
