@@ -4,6 +4,7 @@ Playing around with Monogame. May expand over time.
 What do I actually want to do with this?
 
 TODO:
+	
 	Implement Camera properly
 	Basic central character
 		Can use art from that one Love walking test
