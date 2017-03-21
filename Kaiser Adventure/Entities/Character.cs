@@ -19,6 +19,7 @@ namespace Kaiser_Adventure.Entities {
         public Vector2 Position { get; set; }
         public float Rotation { get; set; }
         public Controller controller;
+        public Controller secondaryController;
 
         public float turningSpeed;
         public float moveSpeed;
@@ -36,11 +37,14 @@ namespace Kaiser_Adventure.Entities {
         public override void Update(GameTime gameTime) {
             if (controller != null) {
                 controller.DoControlUpdate(gameTime);
+
+                if (secondaryController != null) {
+                    secondaryController.DoControlUpdate(gameTime);
+                }
             }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb) {
-            //sb.Draw(staticImage, new Rectangle((int)Position.X - staticImage.Width / 2, (int)Position.Y - staticImage.Height /2, staticImage.Width, staticImage.Height), Color.White);
 
             sb.Draw(staticImage,
                     Position,
