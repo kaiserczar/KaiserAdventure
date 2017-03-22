@@ -10,7 +10,7 @@ namespace Kaiser_Adventure.Entities {
     class PlayerCharacter : Character {
 
         public PlayerCharacter() : base() {
-            this.controller = new PlayerKeyboardInputController(this);
+            this.controller = new PlayerMouseKeyboardInputController(this);
         }
 
     }

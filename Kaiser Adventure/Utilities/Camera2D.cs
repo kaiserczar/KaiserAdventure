@@ -39,5 +39,22 @@ namespace Kaiser_Adventure.Utilities {
             
         }
 
+        public Vector2 WorldToScreen(float x, float y) {
+            return WorldToScreen(new Vector2(x, y));
+        }
+
+        public Vector2 WorldToScreen(Vector2 worldPosition) {
+            return Vector2.Transform(worldPosition + new Vector2(_viewport.X, _viewport.Y), GetViewMatrix());
+        }
+
+        public Vector2 ScreenToWorld(float x, float y) {
+            return ScreenToWorld(new Vector2(x, y));
+        }
+
+        public Vector2 ScreenToWorld(Vector2 screenPosition) {
+            return Vector2.Transform(screenPosition - new Vector2(_viewport.X, _viewport.Y),
+                Matrix.Invert(GetViewMatrix()));
+        }
+
     }
 }

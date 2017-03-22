@@ -13,22 +13,29 @@ using Kaiser_Adventure.Entities.Controllers;
 namespace Kaiser_Adventure {
 
     class TestState : GameState {
-        
+
+        public static TestState _;
+
         private SpriteBatch spriteBatch;
         private RainbowColorCycler colorCycle;
-        private Camera2D camera;
+        public Camera2D camera;
 
         private Character player;
         private List<Character> npcs = new List<Character>();
-
         private PositionMatcher cameraLock;
 
+        private Texture2D cursor;
+
         public TestState(Main main) : base(main) {
+            TestState._ = this;
+
             this.colorCycle = new RainbowColorCycler(4.0);
             camera = new Camera2D(main.GraphicsDevice.Viewport);
 
             this.player = new PlayerCharacter();
-            this.cameraLock = new PositionMatcher(player, camera);
+            this.cameraLock = new PositionMatcher(player, camera, false);
+
+            this.cursor = main.Content.Load<Texture2D>("shieldCursor");
 
             Random rand = new Random();
 
@@ -64,6 +71,11 @@ namespace Kaiser_Adventure {
             }
 
             player.Draw(gameTime, spriteBatch);
+
+            Point mousePos = Mouse.GetState().Position;
+            Vector2 mouse = camera.ScreenToWorld(mousePos.X, mousePos.Y);
+
+            this.spriteBatch.Draw(cursor, new Rectangle((int)mouse.X - cursor.Width/2, (int)mouse.Y - cursor.Height/2, cursor.Width, cursor.Height), Color.White);
 
             this.spriteBatch.End();
         }
