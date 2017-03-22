@@ -62,7 +62,7 @@ namespace Kaiser_Adventure.Utilities {
         // Call once in your main Update method in Game.
         public static void ManagerUpdate(Main main, GameTime gameTime) {
 
-            if (always.Count == 0 & states.Count == 0) main.Exit();
+            if (states.Count == 0) main.Exit();
 
             foreach (GameState gs in always) {
                 gs.Update(gameTime);
@@ -75,7 +75,7 @@ namespace Kaiser_Adventure.Utilities {
         // Call once in your main Draw method in Game.
         public static void ManagerDraw(Main main, GameTime gameTime) {
 
-            if (always.Count == 0 & states.Count == 0) main.Exit();
+            if (states.Count == 0) main.Exit();
 
             foreach (GameState gs in always) {
                 gs.Draw(gameTime);
@@ -83,6 +83,10 @@ namespace Kaiser_Adventure.Utilities {
 
             states.Peek().Draw(gameTime);
 
+        }
+
+        public static GameState GetCurrent() {
+            return states.Peek();
         }
 
     }
