@@ -1,10 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Kaiser_Adventure.Utilities;
-using Kaiser_Adventure.Entities;
+using AdventureCore.Utilities;
+using AdventureCore.Entities;
+using Lidgren.Network;
+using AdventureCore.Network;
 
-namespace Kaiser_Adventure {
+namespace AdventureClient {
     
     public class Main : Game {
         GraphicsDeviceManager graphics;
@@ -13,11 +15,17 @@ namespace Kaiser_Adventure {
         public SpriteFont font;
 
         public static Main _;
+        public static NetClient Client;
 
         public Main() {
             _ = this;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            NetPeerConfiguration npConfig = new NetPeerConfiguration("Adventure");
+            Client = new NetClient(npConfig);
+            Client.Start();
+            Client.Connect("174.105.224.148", 14242);
         }
         
         protected override void Initialize() {
@@ -26,6 +34,8 @@ namespace Kaiser_Adventure {
             graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
             graphics.IsFullScreen = true;
             graphics.ApplyChanges();
+
+            PlayerConnectPacket.New(Program.UserName).Send(Client);
 
             GameState baseState = new TestState(this);
             GameState.Push(baseState);
